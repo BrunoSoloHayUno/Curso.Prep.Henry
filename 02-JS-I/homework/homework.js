@@ -242,7 +242,10 @@ function areaDelTriangulo(base, altura){
 function deEuroAdolar(euro){
   //Supongamos que 1 euro equivale a 1.20 dólares. Escribe un programa que pida al usuario un número de euros y calcule el cambio en dólares.
   //Escribe tu código aquí
-  
+  var dolar = 1.20;
+  //euro = prompt("Igrese cantidad de euros a calcular");
+  var cambio = (euro * dolar);
+  return cambio;
 }
 
 
@@ -251,6 +254,14 @@ function esVocal(letra){
   //Verificar si el usuario ingresó un string de más de un carácter y, en ese caso, informarle 
   //que no se puede procesar el dato mediante el mensaje "Dato incorrecto".
   //Escribe tu código aquí
+  if(letra.length > 1){
+    return "Dato incorrecto"
+  }else if(letra === "a" || "e" || "i" || "o" || "u"){
+    return "Es vocal";
+  }else{
+    return "Dato incorrecto";
+  }
+
 }
 
 
