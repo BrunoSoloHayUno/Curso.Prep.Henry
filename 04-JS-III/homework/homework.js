@@ -69,7 +69,7 @@ function arrayContiene(array, elemento) {
   // Devuelve "true" si está, o "false" si no está
   // Tu código:
  var indice = array.indexOf(elemento);
-
+ // var indice = n.indexOf(n);
  if(indice !== -1){
   return true;
  }else{
@@ -177,23 +177,48 @@ function empiezaConNueve(n) {
   //Desarrolle una función que recibe como parámetro un número entero n. Debe retornar true si el entero 
   //inicia con 9 y false en otro caso.
   //Escribe tu código aquí
-  
+  indice = 0;
+  n = n.toString();
+  indice = n.indexOf("9");
+   if (indice != -1) {
+     return true;
+   }
+   return false;
 }
 
 
 function todosIguales(arreglo) {
   //Escriba la función todosIguales, que indique si todos los elementos de un arreglo son iguales:
   //retornar true, caso contrario retornar false.
-  //Escribe tu código aquí  
-  
+  //Escribe tu código aquí
+  posicion1 = 0;
+  posicion1 = arreglo[0];
+  //posicion1 = arreglo.indexOf(posicion1[0]);
+  for (let i = 1; i < arreglo.length; i++) {
+    if (posicion1 != arreglo[i]) {
+      return false;
+    }
+    return true;
+  }
 } 
 
 
 function mesesDelAño(array) {
-  //Dado un array que contiene algunos meses del año desordenados, recorrer el array buscando los meses de 
-  // "Enero", "Marzo" y "Noviembre", guardarlo en nuevo array y retornarlo.
+  //Dado un array que contiene algunos meses del año desordenados (especificos de abajo), recorrer el array buscando los meses de 
+  // "Enero", "Marzo" y "Noviembre", (<= estos) guardarlo en nuevo array y retornarlo.
   //Si alguno de los meses no está, devolver: "No se encontraron los meses pedidos"
   // Tu código:
+  let meses = [];
+  for(let i = 0; i < array.length; i++){
+   if(array[i] === "Enero" || array[i] === "Marzo" || array[i] === "Noviembre"){
+      meses.push(array[i]);
+   }
+  }
+
+  if(meses.length < 3){
+    return "No se encontraron los meses pedidos";
+  }
+  return meses;
 }
 
 
