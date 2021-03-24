@@ -226,27 +226,57 @@ function mayorACien(array) {
   //La función recibe un array con enteros entre 0 y 200. Recorrer el array y guardar en un nuevo array sólo los
   //valores mayores a 100 (no incluye el 100). Finalmente devolver el nuevo array.
   // Tu código:
+  mayorA100 = [];
+  for (let i = 0; i < array.length; i++) {
+    if(array[i] > 100 && array[i] != 100){
+      mayorA100.push(array[i]);
+    }
+  }
+  return mayorA100;
 }
 
 
 function breakStatement(numero) {
-  //Iterar en un bucle aumentando en 2 el numero recibido hasta un límite de 10 veces.
+  //Iterar(recore) en un bucle aumentando en 2 el numero recibido hasta un límite de 10 veces.
   //Guardar cada nuevo valor en un array. 
   //Devolver el array
-  //Si en algún momento el valor de la suma y la cantidad de iteraciones coinciden, debe interrumpirse la ejecución y 
+
+  //Si en algún momento el valor de la suma y la cantidad de iteraciones (vueltas) coinciden, debe interrumpirse la ejecución y 
   //devolver: "Se interrumpió la ejecución"
-  //Pista: usá el statement 'break'
+  //Pista: usá el statement (sentencia) 'break'
   // Tu código:
+  Vrecivido = [];
+  vuelta = 10;
+  for (let i = 0; i < vuelta; i++) {
+    numero += 2;
+    if(numero === vuelta){
+      return "Se interrumpió la ejecución";
+    }
+    Vrecivido.push(numero);
+  }
+  return Vrecivido;
 }
 
 
 function continueStatement(numero) {
-  //Iterar en un bucle aumentando en 2 el numero recibido hasta un límite de 10 veces.
+  //Iterar (recorer) en un bucle aumentando en 2 el numero recibido hasta un límite de 10 veces.
   //Guardar cada nuevo valor en un array.    
   //Devolver el array
-  //Cuando el número de iteraciones alcance el valor 5, no se suma en ese caso y se continua con la siguiente iteración
-  //Pista: usá el statement 'continue'
+
+  //Cuando el número de iteraciones (vueltas) alcance el valor 5, no se suma en ese caso y se continua con la siguiente iteración
+  //Pista: usá el statement (sentecia) 'continue'
   // Tu código:
+  Vrecivido = [];
+  vuelta = 10;
+  for (let i = 0; i < vuelta; i++) {
+   
+    if(i != 5){
+      numero += 2; 
+      Vrecivido.push(numero);
+    }
+    continue;
+  }
+  return Vrecivido;
 }
 
 
