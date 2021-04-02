@@ -7,13 +7,14 @@ function crearGato(nombre, edad) {
   // Devuelve el objeto
   // Tu código:
 
-  return {
+  obj = {
     nombre: nombre,
     edad: edad,
     meow: function(){
       return "Meow!";
     }
   };
+  return obj;
 }
 
 
@@ -126,22 +127,24 @@ function pasarUsuarioAPremium(usuarios) {
   // Define cada propiedad "esPremium" de cada objeto como "true"
   // Devuelve el array de usuarios
   // Tu código:
-  for (usuario in usuarios) {
-    
-  }
+  usuarios.forEach(usuario => usuario.esPremium = true);
+  return usuarios;
 }
-function sumarLikesDeUsuario(_usuario) {
+function sumarLikesDeUsuario(usuario) {
   // "usuario" tiene una propiedad llamada "posts" que es un array
   // "posts" es un array de objetos "post"
   // Cada objeto "post" tiene una propiedad llamada "likes" que es un entero (int/integer)
   // Suma todos los likes de todos los objetos "post"
   // Devuelve la suma
   // Tu código:
+  suma = 0;
+  usuario.posts.forEach(post => suma += post.likes);
+  return suma;
 }
 
-function agregarMetodoCalculoDescuento(_producto) {
+function agregarMetodoCalculoDescuento(producto) {
   // Agregar un método (función) al objeto "producto" llamado "calcularPrecioDescuento"
-  // Este método debe multiplicar el "precio" del "producto" ("producto.precio" o "producto[precio]") y "porcentajeDeDescuento" para obtener el descuento
+  // Este método debe multiplicar el "precio" del "producto"(this) ("producto.precio" o "producto[precio]") y "porcentajeDeDescuento" para obtener el descuento
   // El método resta el descuento del precio y devuelve el precio con descuento
   // Devuelve el objeto "producto" al final de la función
   // Ejemplo:
@@ -149,7 +152,19 @@ function agregarMetodoCalculoDescuento(_producto) {
   // producto.porcentajeDeDescuento -> 0.2 (o simplemente ".2")
   // producto.calcularPrecioDescuento() -> 20 - (20 * 0.2)
   // Tu código:
-
+  descuento = 0;
+  precioFinal = 0;
+  Precio = producto.precio;
+  porcentaje = producto.porcentajeDeDescuento;
+  
+ producto = {
+  calcularPrecioDescuento: function(){
+    descuento = (Precio * porcentaje);
+    precioFinal = (Precio - descuento);
+    return precioFinal;
+  }
+ };
+ return producto;
 }
 
 // No modificar nada debajo de esta línea
