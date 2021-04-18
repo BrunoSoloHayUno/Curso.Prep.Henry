@@ -55,10 +55,16 @@ function map(array, cb) {
   // El nuevo array debe tener la misma longitud que el array del argumento
   //Tu código:
 
-  vector = []
-  valor = [];
+  vec = [];
+  array.map(array => vec.push(cb(array)));
+  //array.map(array => vec.push(cb(array)));
+  return vec;
+
+  
+  /*valor = [];
   array.forEach(array => valor.push(cb(array)));
-  return valor;
+  return valor;*/
+
 }
 
 function filter(array) {
